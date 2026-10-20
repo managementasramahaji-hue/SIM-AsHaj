@@ -175,7 +175,7 @@ export const Route = createFileRoute("/api/$")({
           } catch (e: any) {
             const cache = await getKey<any>("db_cache", null);
             if (cache) return json({ status: "cached", message: e.message, data: cache });
-            return json({ status: "error", message: e.message, data: null }, 502);
+            return json({ status: "unconfigured", message: `Google Spreadsheet belum dapat diakses: ${e.message}`, data: null });
           }
         }
         return json({ error: "Not found" }, 404);
