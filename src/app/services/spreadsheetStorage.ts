@@ -65,7 +65,7 @@ export function getSpreadsheetConfig(): SpreadsheetConfigInfo {
     source = 'environment';
   }
 
-  const defaultWebUrl = 'https://script.google.com/macros/s/AKfycby9Tok8-zgcVsTuXfQBDA0prmRSpUs9kxpeyczsw9SRVjwZBEk6Y8st3tBv7LK7j_X6/exec';
+  const defaultWebUrl = '';
   const defaultSheetDocUrl = 'https://docs.google.com/spreadsheets/d/15loY6F6CMmIJ5qZaafidY6AB0vvrEpsSsE_B0XXBqP4/edit?gid=0#gid=0';
 
   if (!webAppUrl) {
@@ -234,7 +234,7 @@ export async function fetchFromGoogleSheet(sheetName: string): Promise<any[]> {
     (typeof import.meta !== 'undefined' && (import.meta as any)?.env?.VITE_SHEET_WEBAPP_URL) ||
     (typeof process !== 'undefined' && (process.env.VITE_SHEET_WEBAPP_URL || process.env.GOOGLE_SHEETS_WEBAPP_URL)) ||
     getSpreadsheetConfig().webAppUrl ||
-    'https://script.google.com/macros/s/AKfycby9Tok8-zgcVsTuXfQBDA0prmRSpUs9kxpeyczsw9SRVjwZBEk6Y8st3tBv7LK7j_X6/exec';
+    '';
 
   if (!webAppUrl) {
     return [];
@@ -275,7 +275,7 @@ export async function fetchFullDatabaseFromSpreadsheet(): Promise<CompleteStorag
   const webAppUrl = 
     (typeof import.meta !== 'undefined' && (import.meta as any)?.env?.VITE_SHEET_WEBAPP_URL) ||
     cfg.webAppUrl ||
-    'https://script.google.com/macros/s/AKfycby9Tok8-zgcVsTuXfQBDA0prmRSpUs9kxpeyczsw9SRVjwZBEk6Y8st3tBv7LK7j_X6/exec';
+    '';
 
   // 1. Utamakan pembacaan instan (< 10ms) dari endpoint backend proxy /api/sheets/database
   try {

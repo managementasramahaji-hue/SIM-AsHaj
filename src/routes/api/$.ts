@@ -2,8 +2,7 @@
 // State is kept in the server_store table (server-only access).
 import { createFileRoute } from "@tanstack/react-router";
 
-const DEFAULT_SHEET_URL =
-  "https://script.google.com/macros/s/AKfycby9Tok8-zgcVsTuXfQBDA0prmRSpUs9kxpeyczsw9SRVjwZBEk6Y8st3tBv7LK7j_X6/exec";
+
 
 type RT = { presences: Record<string, any>; workSessions: any[]; chatChannels: any[]; chatMessages: any[] };
 
@@ -25,8 +24,24 @@ async function getRT(): Promise<RT> {
   for (const [k, p] of Object.entries(rt.presences)) if (now - (p as any).lastSeenMs > 120000) delete rt.presences[k];
   return rt;
 }
+async function mirrorToSheet(db: any, force: boolean) {
+  const { createMirrorSpreadsheet, writeMirror } = await import("@/lib/sheet-mirror.server");
+  let m = await getKey<any>("mirror_sheet", null);
+  try {
+    if (!m?.id) { m = { ...(await createMirrorSpreadsheet()), lastSyncMs: 0 }; await setKey("mirror_sheet", m); }
+    if (!force && Date.now() - (m.lastSyncMs || 0) < 30000) return { ok: true, skipped: true, url: m.url };
+    await writeMirror(m.id, db);
+    m = { ...m, lastSyncMs: Date.now(), lastSyncAt: new Date().toISOString(), lastError: null };
+    await setKey("mirror_sheet", m);
+    return { ok: true, url: m.url, lastSyncAt: m.lastSyncAt };
+  } catch (e: any) {
+    if (m?.id) await setKey("mirror_sheet", { ...m, lastError: e.message });
+    return { ok: false, error: e.message, url: m?.url };
+  }
+}
 async function sheetsConfig() {
-  return getKey<any>("sheets_config", { webAppUrl: DEFAULT_SHEET_URL, isConfigured: true });
+  const m = await getKey<any>("mirror_sheet", null);
+  return { webAppUrl: "", isConfigured: true, sheetId: m?.id || "", sheetDocUrl: m?.url || "", storage: "lovable_cloud", mirror: m };
 }
 
 const json = (d: unknown, status = 200) =>
@@ -106,16 +121,6 @@ async function handleEvent(body: any) {
   return json({ ok: true });
 }
 
-async function proxySheet(url: string, init?: RequestInit) {
-  const res = await fetch(url, { redirect: "follow", ...init });
-  const text = await res.text();
-  if (!res.ok) throw new Error(`HTTP ${res.status} dari Google Spreadsheet`);
-  try {
-    return JSON.parse(text);
-  } catch {
-    throw new Error("Respons Google Spreadsheet bukan JSON");
-  }
-}
 
 function stream() {
   const enc = new TextEncoder();
@@ -166,18 +171,11 @@ export const Route = createFileRoute("/api/$")({
           return json({ ok: true, channels: rt.chatChannels, messages: rt.chatMessages, count: { channels: rt.chatChannels.length, messages: rt.chatMessages.length }, timestamp: Date.now() });
         }
         if (path === "sheets/database" || path === "database") {
-          const cfg = await sheetsConfig();
-          const target = cfg.webAppUrl || DEFAULT_SHEET_URL;
-          const sheet = url.searchParams.get("sheet");
-          try {
-            const data = await proxySheet(sheet ? `${target}${target.includes("?") ? "&" : "?"}sheet=${encodeURIComponent(sheet)}` : target);
-            return json({ status: "success", data: data?.data ?? data, source: "google_sheets", updatedAt: new Date().toISOString() });
-          } catch (e: any) {
-            const cache = await getKey<any>("db_cache", null);
-            if (cache) return json({ status: "cached", message: e.message, data: cache });
-            return json({ status: "unconfigured", message: `Google Spreadsheet belum dapat diakses: ${e.message}`, data: null });
-          }
+          const db = await getKey<any>("app_db", null);
+          if (db) return json({ status: "success", data: db, source: "lovable_cloud", updatedAt: new Date().toISOString() });
+          return json({ status: "unconfigured", message: "Database masih kosong.", data: null });
         }
+        if (path === "sheets/mirror") return json(await getKey<any>("mirror_sheet", null));
         return json({ error: "Not found" }, 404);
       },
       POST: async ({ request, params }) => {
@@ -230,15 +228,17 @@ export const Route = createFileRoute("/api/$")({
           return json({ ok: true });
         }
         if (path === "sheets/database" || path === "database") {
-          const cfg = await sheetsConfig();
-          const target = String(body.webAppUrl || cfg.webAppUrl || DEFAULT_SHEET_URL).trim();
-          await setKey("db_cache", body);
-          try {
-            const r = await proxySheet(target, { method: "POST", headers: { "Content-Type": "text/plain;charset=utf-8" }, body: JSON.stringify(body) });
-            return json({ status: "success", result: r });
-          } catch (e: any) {
-            return json({ status: "warning", warning: `Tersimpan di server, tetapi gagal push ke Spreadsheet: ${e.message}` });
-          }
+          const { webAppUrl: _w, action: _a, timestamp: _t, ...db } = body || {};
+          if (!Array.isArray(db.buildings) && !Array.isArray(db.rooms) && !Array.isArray(db.users))
+            return json({ status: "error", message: "Payload database tidak valid" }, 400);
+          await setKey("app_db", db);
+          const mirror = await mirrorToSheet(db, false);
+          return json({ status: "success", mirror });
+        }
+        if (path === "sheets/mirror") {
+          const db = await getKey<any>("app_db", null);
+          if (!db) return json({ ok: false, error: "Database masih kosong" }, 400);
+          return json(await mirrorToSheet(db, true));
         }
         return json({ error: "Not found" }, 404);
       },
