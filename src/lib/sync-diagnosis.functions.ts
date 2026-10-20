@@ -17,7 +17,7 @@ Jangan mengarang detail yang tidak ada di pesan error; sebutkan jika informasi k
 export const diagnoseSyncError = createServerFn({ method: "POST" })
   .inputValidator((d: unknown) => Input.parse(d))
   .handler(async ({ data }) => {
-    const apiKey = process.env.LOVABLE_API_KEY;
+    const apiKey = process.env['LOVABLE_API_KEY'];
     if (!apiKey) return { ok: false as const, error: "Konfigurasi AI belum tersedia." };
     const { createOpenAI } = await import("@ai-sdk/openai");
     const { streamText } = await import("ai");
@@ -35,7 +35,7 @@ export const diagnoseSyncError = createServerFn({ method: "POST" })
       instructions: INSTRUCTIONS,
       messages: [{ role: "user", content: data.errorText }],
       maxRetries: 0,
-      onError: ({ error }) => {
+      onError: ({ error }: { error: unknown }) => {
         const e = error as any;
         const status = e?.statusCode ?? e?.status;
         console.error("diagnoseSyncError failed", status, e?.responseBody ?? e?.message);

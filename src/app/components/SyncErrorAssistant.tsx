@@ -5,7 +5,8 @@ import { diagnoseSyncError } from "@/lib/sync-diagnosis.functions";
 function renderMarkdown(md: string) {
   return md.split("\n").map((line, i) => {
     const t = line.trim();
-    if (t.startsWith("## ")) return <h4 key={i} className="mt-3 font-bold text-hajj-800">{t.slice(3)}</h4>;
+    if (t.startsWith("#")) return <h4 key={i} className="mt-3 font-bold text-hajj-800">{t.replace(/^#+\s*/, "")}</h4>;
+    if (false) return <h4 key={i} className="mt-3 font-bold text-hajj-800">{t.slice(3)}</h4>;
     if (!t) return <div key={i} className="h-1" />;
     const html = t.replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>").replace(/`([^`]+)`/g, "<code>$1</code>");
     return <p key={i} className="leading-relaxed" dangerouslySetInnerHTML={{ __html: html.replace(/<(?!\/?(strong|code)>)/g, "&lt;") }} />;
