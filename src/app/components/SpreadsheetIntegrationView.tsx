@@ -1,4 +1,5 @@
 // @ts-nocheck
+import { SyncErrorAssistant } from './SyncErrorAssistant';
 import React, { useState, useEffect, useMemo } from 'react';
 import { useAppContext } from '../store';
 import { ActionConfirmModal } from './CatalogManagementModals';
@@ -1419,6 +1420,7 @@ function writeObjectsToSheet(ss, sheetName, items, defaultHeaders) {
 
   return (
     <div className="space-y-6 max-w-6xl mx-auto my-4 text-xs sm:text-sm animate-in fade-in duration-200">
+      <SyncErrorAssistant />
       {/* 1. Header & Hero Bar */}
       <div className="bg-gradient-to-r from-emerald-950 via-teal-900 to-slate-900 text-white rounded-3xl p-5 sm:p-7 shadow-xl border border-emerald-500/30 relative overflow-hidden">
         <div className="absolute right-0 top-0 bottom-0 w-1/3 opacity-10 pointer-events-none flex items-center justify-center">
