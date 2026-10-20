@@ -10,6 +10,8 @@ export const Route = createFileRoute("/")({
       { name: "description", content: "Sistem Informasi Manajemen Akomodasi & Operasional UPT Asrama Haji Jakarta" },
       { property: "og:title", content: "SIM Asrama Haji Jakarta" },
       { property: "og:description", content: "Sistem Informasi Manajemen Akomodasi & Operasional UPT Asrama Haji Jakarta" },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: Index,
