@@ -28,11 +28,11 @@
   "next_action": "replace with Lovable auth + first-login password setup"
  },
  {
-  "capability": "google_sheets",
-  "source": "Apps Script web app + /api/sheets proxy",
-  "outcome": "preserve",
-  "status": "blocked",
-  "next_action": "owner must redeploy Apps Script with access: Anyone"
+   "capability": "google_sheets",
+   "source": "Apps Script web app + /api/sheets proxy",
+   "outcome": "replace",
+   "status": "migrated",
+   "next_action": "none - Cloud is the store, sheet is a read-only mirror via the newly linked connection"
  },
  {
   "capability": "realtime_chat_api",
