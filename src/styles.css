@@ -2,7 +2,6 @@
 @source "../src";
 @import "tw-animate-css";
 
-@custom-variant dark (&:is(.dark *));
 
 /*
  * Design system definition.
@@ -142,3 +141,1168 @@
     color: var(--color-foreground);
   }
 }
+
+/* ---- SIM Asrama Haji styles ---- */
+
+@variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-hajj-50: #faf6f2;
+  --color-hajj-100: #f4ece3;
+  --color-hajj-200: #eadacf;
+  --color-hajj-300: #dbc0ac;
+  --color-hajj-400: #c5a183;
+  --color-hajj-500: #a77c57;
+  --color-hajj-600: #8a623d;
+  --color-hajj-700: #6f4b2b; /* Official Kementerian Haji dan Umrah RI Chocolate Brown */
+  --color-hajj-800: #55381e;
+  --color-hajj-900: #412813;
+  --color-hajj-950: #26160a;
+
+  --color-gold-50: #fefdf8;
+  --color-gold-100: #fdf8e9;
+  --color-gold-200: #faefce;
+  --color-gold-300: #f3dfa2;
+  --color-gold-400: #e8ca6e;
+  --color-gold-500: #cca241; /* Official Ministry Emblem Warm Gold */
+  --color-gold-600: #af832f;
+  --color-gold-700: #8c6422;
+  --color-gold-800: #6e4e1c;
+  --color-gold-900: #573e17;
+
+  --font-sans: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+body { 
+  font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
+  background-color: #faf7f5;
+  color: #1e293b;
+  overflow-x: clip;
+  max-width: 100vw;
+  width: 100%;
+}
+
+html {
+  font-size: 13.5px; /* Compact enterprise scaling: perkecil ukuran semua halaman secara proporsional dan rapi */
+  overflow-x: clip;
+  max-width: 100vw;
+  width: 100%;
+}
+
+html.modal-open,
+body.modal-open {
+  overflow: hidden !important;
+  overscroll-behavior: none !important;
+  touch-action: none;
+}
+
+.dark body {
+  background-color: #0f172a;
+  color: #f8fafc;
+}
+
+.dark .bg-white {
+  background-color: #1e293b !important;
+  color: #f8fafc !important;
+}
+
+/* Neutral text brightness in dark mode */
+.dark .text-slate-950,
+.dark .text-slate-900,
+.dark .text-slate-800,
+.dark .text-slate-700,
+.dark .text-slate-600,
+.dark .text-slate-500,
+.dark .text-gray-950,
+.dark .text-gray-900,
+.dark .text-gray-800,
+.dark .text-gray-700,
+.dark .text-gray-600,
+.dark .text-gray-500 {
+  color: #f1f5f9 !important;
+}
+
+.dark .text-slate-400,
+.dark .text-gray-400 {
+  color: #cbd5e1 !important;
+}
+
+.dark .text-slate-300,
+.dark .text-gray-300 {
+  color: #e2e8f0 !important;
+}
+
+/* Colored text brightness in dark mode for high contrast readability */
+.dark .text-hajj-950,
+.dark .text-hajj-900,
+.dark .text-hajj-800,
+.dark .text-hajj-700,
+.dark .text-hajj-600 {
+  color: #fde047 !important;
+}
+
+.dark .text-gold-950,
+.dark .text-gold-900,
+.dark .text-gold-800,
+.dark .text-gold-700,
+.dark .text-gold-600 {
+  color: #fde047 !important;
+}
+
+.dark .text-amber-950,
+.dark .text-amber-900,
+.dark .text-amber-800,
+.dark .text-amber-700,
+.dark .text-amber-600,
+.dark .text-yellow-950,
+.dark .text-yellow-900,
+.dark .text-yellow-800,
+.dark .text-yellow-700,
+.dark .text-yellow-600 {
+  color: #fde047 !important;
+}
+
+.dark .text-emerald-950,
+.dark .text-emerald-900,
+.dark .text-emerald-800,
+.dark .text-emerald-700,
+.dark .text-emerald-600,
+.dark .text-green-950,
+.dark .text-green-900,
+.dark .text-green-800,
+.dark .text-green-700,
+.dark .text-green-600 {
+  color: #6ee7b7 !important;
+}
+
+.dark .text-blue-950,
+.dark .text-blue-900,
+.dark .text-blue-800,
+.dark .text-blue-700,
+.dark .text-blue-600 {
+  color: #93c5fd !important;
+}
+
+.dark .text-indigo-950,
+.dark .text-indigo-900,
+.dark .text-indigo-800,
+.dark .text-indigo-700,
+.dark .text-indigo-600 {
+  color: #a5b4fc !important;
+}
+
+.dark .text-purple-950,
+.dark .text-purple-900,
+.dark .text-purple-800,
+.dark .text-purple-700,
+.dark .text-purple-600,
+.dark .text-violet-950,
+.dark .text-violet-900,
+.dark .text-violet-800,
+.dark .text-violet-700,
+.dark .text-violet-600 {
+  color: #d8b4fe !important;
+}
+
+.dark .text-teal-950,
+.dark .text-teal-900,
+.dark .text-teal-800,
+.dark .text-teal-700,
+.dark .text-teal-600 {
+  color: #5eead4 !important;
+}
+
+.dark .text-orange-950,
+.dark .text-orange-900,
+.dark .text-orange-800,
+.dark .text-orange-700,
+.dark .text-orange-600 {
+  color: #fdba74 !important;
+}
+
+.dark .text-rose-950,
+.dark .text-rose-900,
+.dark .text-rose-800,
+.dark .text-rose-700,
+.dark .text-rose-600,
+.dark .text-red-950,
+.dark .text-red-900,
+.dark .text-red-800,
+.dark .text-red-700,
+.dark .text-red-600 {
+  color: #fca5a5 !important;
+}
+
+.dark .border-slate-100,
+.dark .border-slate-200,
+.dark .border-slate-300 {
+  border-color: #334155 !important;
+}
+
+.dark .border-slate-400 {
+  border-color: #475569 !important;
+}
+
+/* Surface backgrounds in Dark Mode */
+.dark .bg-slate-50,
+.dark .bg-slate-100,
+.dark [class*="bg-slate-50"],
+.dark [class*="bg-slate-100"] {
+  background-color: #1e293b !important;
+  color: #f8fafc !important;
+}
+
+.dark .bg-slate-200,
+.dark .bg-slate-300,
+.dark [class*="bg-slate-200"],
+.dark [class*="bg-slate-300"],
+.dark .bg-gray-200,
+.dark .bg-gray-300,
+.dark [class*="bg-gray-200"],
+.dark [class*="bg-gray-300"] {
+  background-color: #334155 !important;
+  color: #f8fafc !important;
+  border-color: #475569 !important;
+}
+
+/* Translucent White Overlays (cards with bg-white/70, bg-white/80, bg-white/90) */
+.dark [class*="bg-white/60"],
+.dark [class*="bg-white/70"],
+.dark [class*="bg-white/80"],
+.dark [class*="bg-white/90"] {
+  background-color: #1e293b !important;
+  border-color: #334155 !important;
+  color: #f8fafc !important;
+}
+
+.dark [class*="hover:bg-slate-50"]:hover,
+.dark [class*="hover:bg-slate-100"]:hover,
+.dark [class*="hover:bg-slate-200"]:hover {
+  background-color: #334155 !important;
+}
+
+/* Alert, Pill, and Badge Containers in Dark Mode */
+.dark [class*="bg-hajj-50"],
+.dark [class*="bg-hajj-100"],
+.dark [class*="bg-hajj-200"] {
+  background-color: rgba(138, 98, 61, 0.22) !important;
+  border-color: rgba(138, 98, 61, 0.45) !important;
+}
+
+.dark [class*="bg-amber-50"],
+.dark [class*="bg-amber-100"],
+.dark [class*="bg-amber-200"],
+.dark [class*="bg-gold-50"],
+.dark [class*="bg-gold-100"],
+.dark [class*="bg-gold-200"],
+.dark [class*="bg-yellow-50"],
+.dark [class*="bg-yellow-100"],
+.dark [class*="bg-yellow-200"] {
+  background-color: rgba(245, 158, 11, 0.22) !important;
+  border-color: rgba(245, 158, 11, 0.45) !important;
+}
+
+.dark [class*="bg-emerald-50"],
+.dark [class*="bg-emerald-100"],
+.dark [class*="bg-emerald-200"],
+.dark [class*="bg-green-50"],
+.dark [class*="bg-green-100"],
+.dark [class*="bg-green-200"] {
+  background-color: rgba(16, 185, 129, 0.22) !important;
+  border-color: rgba(16, 185, 129, 0.45) !important;
+}
+
+.dark [class*="bg-blue-50"],
+.dark [class*="bg-blue-100"],
+.dark [class*="bg-blue-200"],
+.dark [class*="bg-indigo-50"],
+.dark [class*="bg-indigo-100"],
+.dark [class*="bg-indigo-200"] {
+  background-color: rgba(59, 130, 246, 0.22) !important;
+  border-color: rgba(59, 130, 246, 0.45) !important;
+}
+
+.dark [class*="bg-purple-50"],
+.dark [class*="bg-purple-100"],
+.dark [class*="bg-purple-200"],
+.dark [class*="bg-violet-50"],
+.dark [class*="bg-violet-100"] {
+  background-color: rgba(168, 85, 247, 0.22) !important;
+  border-color: rgba(168, 85, 247, 0.45) !important;
+}
+
+.dark [class*="bg-teal-50"],
+.dark [class*="bg-teal-100"],
+.dark [class*="bg-teal-200"] {
+  background-color: rgba(20, 184, 166, 0.22) !important;
+  border-color: rgba(20, 184, 166, 0.45) !important;
+}
+
+.dark [class*="bg-orange-50"],
+.dark [class*="bg-orange-100"],
+.dark [class*="bg-orange-200"] {
+  background-color: rgba(249, 115, 22, 0.22) !important;
+  border-color: rgba(249, 115, 22, 0.45) !important;
+}
+
+.dark [class*="bg-rose-50"],
+.dark [class*="bg-rose-100"],
+.dark [class*="bg-rose-200"],
+.dark [class*="bg-red-50"],
+.dark [class*="bg-red-100"],
+.dark [class*="bg-red-200"] {
+  background-color: rgba(239, 68, 68, 0.22) !important;
+  border-color: rgba(239, 68, 68, 0.45) !important;
+}
+
+/* SOLID Bright Buttons & Tags (Gold / Yellow / Amber) MUST have Dark Slate Text for High Contrast */
+.dark .bg-gold-400,
+.dark .bg-gold-500,
+.dark .bg-gold-600,
+.dark .bg-amber-400,
+.dark .bg-amber-500,
+.dark .bg-yellow-400,
+.dark .bg-yellow-500,
+.dark [class*="bg-gold-400"],
+.dark [class*="bg-gold-500"],
+.dark [class*="bg-gold-600"],
+.dark [class*="bg-amber-400"],
+.dark [class*="bg-amber-500"],
+.dark [class*="bg-yellow-400"],
+.dark [class*="bg-yellow-500"] {
+  color: #0f172a !important;
+}
+
+.dark .bg-gold-400 *,
+.dark .bg-gold-500 *,
+.dark .bg-gold-600 *,
+.dark .bg-amber-400 *,
+.dark .bg-amber-500 *,
+.dark .bg-yellow-400 *,
+.dark .bg-yellow-500 *,
+.dark [class*="bg-gold-400"] *,
+.dark [class*="bg-gold-500"] *,
+.dark [class*="bg-gold-600"] *,
+.dark [class*="bg-amber-400"] *,
+.dark [class*="bg-amber-500"] * {
+  color: #0f172a !important;
+}
+
+/* Secondary Buttons */
+.dark button.bg-slate-100,
+.dark button.bg-slate-200,
+.dark button.bg-slate-300 {
+  background-color: #334155 !important;
+  color: #f8fafc !important;
+  border-color: #475569 !important;
+}
+
+.dark button.bg-slate-100:hover,
+.dark button.bg-slate-200:hover {
+  background-color: #475569 !important;
+  color: #ffffff !important;
+}
+
+/* Inputs, Selects, and Textareas */
+.dark input,
+.dark select,
+.dark textarea {
+  background-color: #0f172a !important;
+  color: #f8fafc !important;
+  border-color: #334155 !important;
+}
+
+.dark input:focus,
+.dark select:focus,
+.dark textarea:focus {
+  border-color: #cca241 !important;
+  box-shadow: 0 0 0 2px rgba(204, 162, 65, 0.3) !important;
+}
+
+.dark input:disabled,
+.dark select:disabled,
+.dark textarea:disabled,
+.dark input[readonly] {
+  background-color: #1e293b !important;
+  color: #94a3b8 !important;
+  border-color: #334155 !important;
+}
+
+.dark option {
+  background-color: #0f172a !important;
+  color: #f8fafc !important;
+}
+
+.dark input::placeholder,
+.dark textarea::placeholder {
+  color: #94a3b8 !important;
+}
+
+/* Tables and Headers */
+.dark table thead tr,
+.dark thead tr,
+.dark thead th,
+.dark table th {
+  background-color: #0f172a !important;
+  color: #f8fafc !important;
+  border-color: #334155 !important;
+}
+
+.dark table tbody tr {
+  border-color: #334155 !important;
+}
+
+.dark table tbody tr:hover,
+.dark tbody tr:hover {
+  background-color: rgba(51, 65, 85, 0.4) !important;
+}
+
+.dark table td {
+  color: #e2e8f0 !important;
+}
+
+/* Modals & Popups Contrast Enhancement */
+.dark .fixed .bg-white,
+.dark [role="dialog"],
+.dark .modal-content,
+.dark .modal-surface {
+  background-color: #1e293b !important;
+  color: #f8fafc !important;
+  border-color: #334155 !important;
+}
+
+.dark .fixed .bg-white *,
+.dark [role="dialog"] * {
+  border-color: #334155;
+}
+
+.dark .fixed label,
+.dark [role="dialog"] label {
+  color: #f1f5f9 !important;
+}
+
+.dark .fixed h1,
+.dark .fixed h2,
+.dark .fixed h3,
+.dark .fixed h4,
+.dark .fixed h5,
+.dark .fixed h6,
+.dark [role="dialog"] h1,
+.dark [role="dialog"] h2,
+.dark [role="dialog"] h3,
+.dark [role="dialog"] h4,
+.dark [role="dialog"] h5,
+.dark [role="dialog"] h6 {
+  color: #f8fafc !important;
+}
+
+.dark .fixed p,
+.dark .fixed small,
+.dark [role="dialog"] p,
+.dark [role="dialog"] small {
+  color: #cbd5e1 !important;
+}
+
+.dark .fixed strong,
+.dark .fixed b,
+.dark [role="dialog"] strong,
+.dark [role="dialog"] b {
+  color: #ffffff !important;
+}
+
+/* Specific text color utilities inside modals to ensure high readability in dark mode */
+.dark .fixed .text-slate-950,
+.dark .fixed .text-slate-900,
+.dark .fixed .text-slate-800,
+.dark .fixed .text-slate-700,
+.dark [role="dialog"] .text-slate-950,
+.dark [role="dialog"] .text-slate-900,
+.dark [role="dialog"] .text-slate-800,
+.dark [role="dialog"] .text-slate-700,
+.dark .fixed .text-gray-950,
+.dark .fixed .text-gray-900,
+.dark .fixed .text-gray-800,
+.dark .fixed .text-gray-700,
+.dark [role="dialog"] .text-gray-950,
+.dark [role="dialog"] .text-gray-900,
+.dark [role="dialog"] .text-gray-800,
+.dark [role="dialog"] .text-gray-700 {
+  color: #f8fafc !important;
+}
+
+.dark .fixed .text-slate-600,
+.dark .fixed .text-slate-500,
+.dark [role="dialog"] .text-slate-600,
+.dark [role="dialog"] .text-slate-500,
+.dark .fixed .text-gray-600,
+.dark .fixed .text-gray-500,
+.dark [role="dialog"] .text-gray-600,
+.dark [role="dialog"] .text-gray-500 {
+  color: #cbd5e1 !important;
+}
+
+.dark .fixed .text-slate-400,
+.dark [role="dialog"] .text-slate-400,
+.dark .fixed .text-gray-400,
+.dark [role="dialog"] .text-gray-400 {
+  color: #94a3b8 !important;
+}
+
+/* Hajj & Gold brand text in dark mode popups */
+.dark .fixed .text-hajj-950,
+.dark .fixed .text-hajj-900,
+.dark .fixed .text-hajj-800,
+.dark [role="dialog"] .text-hajj-950,
+.dark [role="dialog"] .text-hajj-900,
+.dark [role="dialog"] .text-hajj-800,
+.dark .text-hajj-950,
+.dark .text-hajj-900,
+.dark .text-hajj-800 {
+  color: #f8fafc !important;
+}
+
+.dark .fixed .text-hajj-700,
+.dark .fixed .text-hajj-600,
+.dark [role="dialog"] .text-hajj-700,
+.dark [role="dialog"] .text-hajj-600,
+.dark .text-hajj-700,
+.dark .text-hajj-600 {
+  color: #f6d896 !important;
+}
+
+.dark .fixed .text-hajj-200,
+.dark .fixed .text-hajj-300,
+.dark [role="dialog"] .text-hajj-200,
+.dark [role="dialog"] .text-hajj-300 {
+  color: #fef08a !important;
+}
+
+.dark .fixed .text-gold-700,
+.dark .fixed .text-gold-600,
+.dark [role="dialog"] .text-gold-700,
+.dark [role="dialog"] .text-gold-600 {
+  color: #facc15 !important;
+}
+
+/* Emerald / Green status text in dark mode popups */
+.dark .fixed .text-emerald-950,
+.dark .fixed .text-emerald-900,
+.dark .fixed .text-emerald-800,
+.dark .fixed .text-emerald-700,
+.dark [role="dialog"] .text-emerald-950,
+.dark [role="dialog"] .text-emerald-900,
+.dark [role="dialog"] .text-emerald-800,
+.dark [role="dialog"] .text-emerald-700 {
+  color: #6ee7b7 !important;
+}
+
+/* Blue status text in dark mode popups */
+.dark .fixed .text-blue-950,
+.dark .fixed .text-blue-900,
+.dark .fixed .text-blue-800,
+.dark .fixed .text-blue-700,
+.dark [role="dialog"] .text-blue-950,
+.dark [role="dialog"] .text-blue-900,
+.dark [role="dialog"] .text-blue-800,
+.dark [role="dialog"] .text-blue-700 {
+  color: #93c5fd !important;
+}
+
+/* Amber / Orange status text in dark mode popups */
+.dark .fixed .text-amber-950,
+.dark .fixed .text-amber-900,
+.dark .fixed .text-amber-800,
+.dark .fixed .text-amber-700,
+.dark [role="dialog"] .text-amber-950,
+.dark [role="dialog"] .text-amber-900,
+.dark [role="dialog"] .text-amber-800,
+.dark [role="dialog"] .text-amber-700 {
+  color: #fde047 !important;
+}
+
+/* Purple status text in dark mode popups */
+.dark .fixed .text-purple-950,
+.dark .fixed .text-purple-900,
+.dark .fixed .text-purple-800,
+.dark .fixed .text-purple-700,
+.dark [role="dialog"] .text-purple-950,
+.dark [role="dialog"] .text-purple-900,
+.dark [role="dialog"] .text-purple-800,
+.dark [role="dialog"] .text-purple-700 {
+  color: #d8b4fe !important;
+}
+
+/* Red / Rose status text in dark mode popups */
+.dark .fixed .text-rose-950,
+.dark .fixed .text-rose-900,
+.dark .fixed .text-rose-800,
+.dark .fixed .text-rose-700,
+.dark .fixed .text-red-950,
+.dark .fixed .text-red-900,
+.dark .fixed .text-red-800,
+.dark .fixed .text-red-700,
+.dark [role="dialog"] .text-rose-950,
+.dark [role="dialog"] .text-rose-900,
+.dark [role="dialog"] .text-rose-800,
+.dark [role="dialog"] .text-rose-700,
+.dark [role="dialog"] .text-red-950,
+.dark [role="dialog"] .text-red-900,
+.dark [role="dialog"] .text-red-800,
+.dark [role="dialog"] .text-red-700 {
+  color: #fca5a5 !important;
+}
+
+.dark .fixed input,
+.dark .fixed select,
+.dark .fixed textarea,
+.dark [role="dialog"] input,
+.dark [role="dialog"] select,
+.dark [role="dialog"] textarea {
+  background-color: #0f172a !important;
+  color: #f8fafc !important;
+  border-color: #475569 !important;
+}
+
+.dark .fixed input::placeholder,
+.dark .fixed textarea::placeholder,
+.dark [role="dialog"] input::placeholder,
+.dark [role="dialog"] textarea::placeholder {
+  color: #94a3b8 !important;
+}
+
+/* Inner card boxes and sections inside modals */
+.dark .fixed .bg-slate-50,
+.dark .fixed .bg-slate-100,
+.dark .fixed [class*="bg-slate-50"],
+.dark .fixed [class*="bg-slate-100"],
+.dark [role="dialog"] .bg-slate-50,
+.dark [role="dialog"] .bg-slate-100,
+.dark [role="dialog"] [class*="bg-slate-50"],
+.dark [role="dialog"] [class*="bg-slate-100"] {
+  background-color: #0f172a !important;
+  border-color: #334155 !important;
+  color: #f1f5f9 !important;
+}
+
+/* Inner nested white cards in modals */
+.dark .fixed .bg-white .bg-white,
+.dark [role="dialog"] .bg-white {
+  background-color: #0f172a !important;
+  border-color: #334155 !important;
+}
+
+/* Secondary cancel/close buttons inside modals */
+.dark .fixed button.bg-slate-100,
+.dark .fixed button.bg-slate-200,
+.dark [role="dialog"] button.bg-slate-100,
+.dark [role="dialog"] button.bg-slate-200 {
+  background-color: #334155 !important;
+  color: #f8fafc !important;
+  border-color: #475569 !important;
+}
+
+.dark .fixed button.bg-slate-100:hover,
+.dark .fixed button.bg-slate-200:hover,
+.dark [role="dialog"] button.bg-slate-100:hover,
+.dark [role="dialog"] button.bg-slate-200:hover {
+  background-color: #475569 !important;
+  color: #ffffff !important;
+}
+
+/* Tables and lists inside modals */
+.dark .fixed table,
+.dark [role="dialog"] table {
+  color: #f8fafc !important;
+  border-color: #334155 !important;
+}
+
+.dark .fixed table th,
+.dark [role="dialog"] table th {
+  background-color: #0f172a !important;
+  color: #f8fafc !important;
+  border-color: #334155 !important;
+}
+
+.dark .fixed table td,
+.dark [role="dialog"] table td {
+  color: #f1f5f9 !important;
+  border-color: #334155 !important;
+}
+
+.dark .fixed table tr:hover,
+.dark [role="dialog"] table tr:hover {
+  background-color: rgba(51, 65, 85, 0.4) !important;
+}
+
+/* Hajj branded boxes in modals */
+.dark .fixed [class*="bg-hajj-50"],
+.dark .fixed [class*="bg-hajj-100"],
+.dark [role="dialog"] [class*="bg-hajj-50"],
+.dark [role="dialog"] [class*="bg-hajj-100"] {
+  background-color: rgba(204, 162, 65, 0.16) !important;
+  border-color: rgba(204, 162, 65, 0.35) !important;
+  color: #fef08a !important;
+}
+
+.dark .fixed [class*="bg-hajj-200"],
+.dark [role="dialog"] [class*="bg-hajj-200"] {
+  background-color: rgba(204, 162, 65, 0.28) !important;
+  border-color: rgba(204, 162, 65, 0.45) !important;
+  color: #fef9c3 !important;
+}
+
+/* Alert notices within modals */
+.dark .fixed [class*="bg-amber-50"],
+.dark .fixed [class*="bg-amber-100"],
+.dark .fixed [class*="bg-gold-50"],
+.dark .fixed [class*="bg-gold-100"],
+.dark [role="dialog"] [class*="bg-amber-50"],
+.dark [role="dialog"] [class*="bg-amber-100"],
+.dark [role="dialog"] [class*="bg-gold-50"],
+.dark [role="dialog"] [class*="bg-gold-100"] {
+  background-color: rgba(245, 158, 11, 0.2) !important;
+  border-color: rgba(245, 158, 11, 0.4) !important;
+  color: #fef08a !important;
+}
+
+.dark .fixed [class*="bg-amber-50"] p,
+.dark .fixed [class*="bg-amber-50"] span,
+.dark .fixed [class*="bg-amber-50"] div,
+.dark .fixed [class*="bg-amber-50"] strong,
+.dark .fixed [class*="bg-amber-50"] h4,
+.dark .fixed [class*="bg-amber-50"] h5,
+.dark .fixed [class*="bg-amber-100"] p,
+.dark .fixed [class*="bg-amber-100"] span,
+.dark .fixed [class*="bg-amber-100"] div,
+.dark .fixed [class*="bg-amber-100"] strong,
+.dark [role="dialog"] [class*="bg-amber-50"] p,
+.dark [role="dialog"] [class*="bg-amber-50"] span,
+.dark [role="dialog"] [class*="bg-amber-50"] div,
+.dark [role="dialog"] [class*="bg-amber-50"] strong,
+.dark [role="dialog"] [class*="bg-amber-50"] h4,
+.dark [role="dialog"] [class*="bg-amber-50"] h5,
+.dark [role="dialog"] [class*="bg-amber-100"] p,
+.dark [role="dialog"] [class*="bg-amber-100"] span,
+.dark [role="dialog"] [class*="bg-amber-100"] div,
+.dark [role="dialog"] [class*="bg-amber-100"] strong {
+  color: #fde047 !important;
+}
+
+.dark .fixed [class*="bg-blue-50"],
+.dark .fixed [class*="bg-blue-100"],
+.dark [role="dialog"] [class*="bg-blue-50"],
+.dark [role="dialog"] [class*="bg-blue-100"] {
+  background-color: rgba(59, 130, 246, 0.2) !important;
+  border-color: rgba(59, 130, 246, 0.4) !important;
+  color: #bfdbfe !important;
+}
+
+.dark .fixed [class*="bg-blue-50"] p,
+.dark .fixed [class*="bg-blue-50"] span,
+.dark .fixed [class*="bg-blue-50"] div,
+.dark .fixed [class*="bg-blue-50"] strong,
+.dark .fixed [class*="bg-blue-50"] h4,
+.dark .fixed [class*="bg-blue-50"] h5,
+.dark .fixed [class*="bg-blue-100"] p,
+.dark .fixed [class*="bg-blue-100"] span,
+.dark .fixed [class*="bg-blue-100"] div,
+.dark .fixed [class*="bg-blue-100"] strong,
+.dark [role="dialog"] [class*="bg-blue-50"] p,
+.dark [role="dialog"] [class*="bg-blue-50"] span,
+.dark [role="dialog"] [class*="bg-blue-50"] div,
+.dark [role="dialog"] [class*="bg-blue-50"] strong,
+.dark [role="dialog"] [class*="bg-blue-50"] h4,
+.dark [role="dialog"] [class*="bg-blue-50"] h5,
+.dark [role="dialog"] [class*="bg-blue-100"] p,
+.dark [role="dialog"] [class*="bg-blue-100"] span,
+.dark [role="dialog"] [class*="bg-blue-100"] div,
+.dark [role="dialog"] [class*="bg-blue-100"] strong {
+  color: #93c5fd !important;
+}
+
+.dark .fixed [class*="bg-purple-50"],
+.dark .fixed [class*="bg-purple-100"],
+.dark [role="dialog"] [class*="bg-purple-50"],
+.dark [role="dialog"] [class*="bg-purple-100"] {
+  background-color: rgba(168, 85, 247, 0.2) !important;
+  border-color: rgba(168, 85, 247, 0.4) !important;
+  color: #e9d5ff !important;
+}
+
+.dark .fixed [class*="bg-purple-50"] p,
+.dark .fixed [class*="bg-purple-50"] span,
+.dark .fixed [class*="bg-purple-50"] div,
+.dark .fixed [class*="bg-purple-50"] strong,
+.dark .fixed [class*="bg-purple-50"] h4,
+.dark .fixed [class*="bg-purple-50"] h5,
+.dark .fixed [class*="bg-purple-100"] p,
+.dark .fixed [class*="bg-purple-100"] span,
+.dark .fixed [class*="bg-purple-100"] div,
+.dark .fixed [class*="bg-purple-100"] strong,
+.dark [role="dialog"] [class*="bg-purple-50"] p,
+.dark [role="dialog"] [class*="bg-purple-50"] span,
+.dark [role="dialog"] [class*="bg-purple-50"] div,
+.dark [role="dialog"] [class*="bg-purple-50"] strong,
+.dark [role="dialog"] [class*="bg-purple-50"] h4,
+.dark [role="dialog"] [class*="bg-purple-50"] h5,
+.dark [role="dialog"] [class*="bg-purple-100"] p,
+.dark [role="dialog"] [class*="bg-purple-100"] span,
+.dark [role="dialog"] [class*="bg-purple-100"] div,
+.dark [role="dialog"] [class*="bg-purple-100"] strong {
+  color: #d8b4fe !important;
+}
+
+.dark .fixed [class*="bg-emerald-50"],
+.dark .fixed [class*="bg-emerald-100"],
+.dark [role="dialog"] [class*="bg-emerald-50"],
+.dark [role="dialog"] [class*="bg-emerald-100"] {
+  background-color: rgba(16, 185, 129, 0.2) !important;
+  border-color: rgba(16, 185, 129, 0.4) !important;
+  color: #a7f3d0 !important;
+}
+
+.dark .fixed [class*="bg-emerald-50"] p,
+.dark .fixed [class*="bg-emerald-50"] span,
+.dark .fixed [class*="bg-emerald-50"] div,
+.dark .fixed [class*="bg-emerald-50"] strong,
+.dark .fixed [class*="bg-emerald-50"] h4,
+.dark .fixed [class*="bg-emerald-50"] h5,
+.dark .fixed [class*="bg-emerald-100"] p,
+.dark .fixed [class*="bg-emerald-100"] span,
+.dark .fixed [class*="bg-emerald-100"] div,
+.dark .fixed [class*="bg-emerald-100"] strong,
+.dark [role="dialog"] [class*="bg-emerald-50"] p,
+.dark [role="dialog"] [class*="bg-emerald-50"] span,
+.dark [role="dialog"] [class*="bg-emerald-50"] div,
+.dark [role="dialog"] [class*="bg-emerald-50"] strong,
+.dark [role="dialog"] [class*="bg-emerald-50"] h4,
+.dark [role="dialog"] [class*="bg-emerald-50"] h5,
+.dark [role="dialog"] [class*="bg-emerald-100"] p,
+.dark [role="dialog"] [class*="bg-emerald-100"] span,
+.dark [role="dialog"] [class*="bg-emerald-100"] div,
+.dark [role="dialog"] [class*="bg-emerald-100"] strong {
+  color: #6ee7b7 !important;
+}
+
+.dark .fixed [class*="bg-orange-50"],
+.dark .fixed [class*="bg-orange-100"],
+.dark [role="dialog"] [class*="bg-orange-50"],
+.dark [role="dialog"] [class*="bg-orange-100"] {
+  background-color: rgba(249, 115, 22, 0.2) !important;
+  border-color: rgba(249, 115, 22, 0.4) !important;
+  color: #fed7aa !important;
+}
+
+.dark .fixed [class*="bg-orange-50"] p,
+.dark .fixed [class*="bg-orange-50"] span,
+.dark .fixed [class*="bg-orange-50"] div,
+.dark .fixed [class*="bg-orange-50"] strong,
+.dark .fixed [class*="bg-orange-100"] p,
+.dark .fixed [class*="bg-orange-100"] span,
+.dark .fixed [class*="bg-orange-100"] div,
+.dark .fixed [class*="bg-orange-100"] strong,
+.dark [role="dialog"] [class*="bg-orange-50"] p,
+.dark [role="dialog"] [class*="bg-orange-50"] span,
+.dark [role="dialog"] [class*="bg-orange-50"] div,
+.dark [role="dialog"] [class*="bg-orange-50"] strong,
+.dark [role="dialog"] [class*="bg-orange-100"] p,
+.dark [role="dialog"] [class*="bg-orange-100"] span,
+.dark [role="dialog"] [class*="bg-orange-100"] div,
+.dark [role="dialog"] [class*="bg-orange-100"] strong {
+  color: #fdba74 !important;
+}
+
+.dark .fixed [class*="bg-red-50"],
+.dark .fixed [class*="bg-rose-50"],
+.dark [role="dialog"] [class*="bg-red-50"],
+.dark [role="dialog"] [class*="bg-rose-50"] {
+  background-color: rgba(239, 68, 68, 0.2) !important;
+  border-color: rgba(239, 68, 68, 0.4) !important;
+  color: #fecaca !important;
+}
+
+.dark .fixed [class*="bg-red-50"] p,
+.dark .fixed [class*="bg-red-50"] span,
+.dark .fixed [class*="bg-red-50"] div,
+.dark .fixed [class*="bg-red-50"] strong,
+.dark [role="dialog"] [class*="bg-red-50"] p,
+.dark [role="dialog"] [class*="bg-red-50"] span,
+.dark [role="dialog"] [class*="bg-red-50"] div,
+.dark [role="dialog"] [class*="bg-red-50"] strong {
+  color: #fca5a5 !important;
+}
+
+.dark .fixed [class*="bg-teal-50"],
+.dark [role="dialog"] [class*="bg-teal-50"] {
+  background-color: rgba(20, 184, 166, 0.2) !important;
+  border-color: rgba(20, 184, 166, 0.4) !important;
+  color: #99f6e4 !important;
+}
+
+.dark .fixed [class*="bg-teal-50"] p,
+.dark .fixed [class*="bg-teal-50"] span,
+.dark .fixed [class*="bg-teal-50"] div,
+.dark .fixed [class*="bg-teal-50"] strong,
+.dark [role="dialog"] [class*="bg-teal-50"] p,
+.dark [role="dialog"] [class*="bg-teal-50"] span,
+.dark [role="dialog"] [class*="bg-teal-50"] div,
+.dark [role="dialog"] [class*="bg-teal-50"] strong {
+  color: #5eead4 !important;
+}
+
+.custom-scrollbar::-webkit-scrollbar { width: 6px; height: 6px; }
+.custom-scrollbar::-webkit-scrollbar-track { background: #f5efe9; border-radius: 4px; }
+.custom-scrollbar::-webkit-scrollbar-thumb { background: #d7c2af; border-radius: 4px; }
+.custom-scrollbar::-webkit-scrollbar-thumb:hover { background: #6f4b2b; }
+
+@media print {
+    .no-print { display: none !important; }
+    .print-only { display: block !important; }
+    
+    /* Ensure clean sheet for printing */
+    html, body {
+      background-color: #ffffff !important;
+      color: #0f172a !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      overflow: visible !important;
+      height: auto !important;
+      min-height: auto !important;
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+    }
+
+    /* When printing invoice or kwitansi, hide standard UI chrome to prevent blank pages or overlapping backgrounds */
+    body.printing-invoice header,
+    body.printing-invoice main,
+    body.printing-invoice #floating-chat-container,
+    body.printing-invoice #floating-chat-panel,
+    body.printing-invoice .toast-container,
+    body.has-invoice-open header,
+    body.has-invoice-open main,
+    body.has-invoice-open #floating-chat-container,
+    body.has-invoice-open #floating-chat-panel,
+    body.has-invoice-open .toast-container,
+    body.printing-kwitansi header,
+    body.printing-kwitansi main,
+    body.printing-kwitansi #floating-chat-container,
+    body.printing-kwitansi #floating-chat-panel,
+    body.printing-kwitansi .toast-container,
+    body.has-kwitansi-open header,
+    body.has-kwitansi-open main,
+    body.has-kwitansi-open #floating-chat-container,
+    body.has-kwitansi-open #floating-chat-panel,
+    body.has-kwitansi-open .toast-container {
+      display: none !important;
+    }
+
+    /* Reset modal overlay constraints so Chromium print engine renders full document flow */
+    #invoice-modal-overlay,
+    #kwitansi-modal-overlay {
+      position: static !important;
+      inset: auto !important;
+      background: #ffffff !important;
+      padding: 0 !important;
+      margin: 0 !important;
+      overflow: visible !important;
+      display: block !important;
+      z-index: auto !important;
+      width: 100% !important;
+      max-width: 100% !important;
+      min-height: auto !important;
+    }
+
+    #invoice-modal-card,
+    #kwitansi-modal-card {
+      position: static !important;
+      background: #ffffff !important;
+      padding: 0 !important;
+      margin: 0 !important;
+      box-shadow: none !important;
+      border: none !important;
+      border-radius: 0 !important;
+      max-height: none !important;
+      height: auto !important;
+      width: 100% !important;
+      max-width: 100% !important;
+      overflow: visible !important;
+      display: block !important;
+    }
+
+    #invoice-printable-sheet,
+    #kwitansi-printable-sheet {
+      position: static !important;
+      display: block !important;
+      visibility: visible !important;
+      width: 100% !important;
+      max-width: 100% !important;
+      margin: 0 !important;
+      padding: 4mm 6mm !important;
+      box-shadow: none !important;
+      border: none !important;
+      background: #ffffff !important;
+      overflow: visible !important;
+      page-break-inside: auto;
+      break-inside: auto;
+    }
+
+    #invoice-printable-sheet table tr,
+    #kwitansi-printable-sheet table tr {
+      page-break-inside: avoid;
+      break-inside: avoid;
+    }
+
+    #invoice-printable-sheet *,
+    #kwitansi-printable-sheet * {
+      visibility: visible !important;
+    }
+
+    @page {
+      size: auto;
+      margin: 8mm 10mm;
+    }
+}
+
+/* Responsive Global Rules & Media Queries for Mobile & Tablet */
+img, video, table {
+  max-width: 100%;
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+  .container {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+/* ==========================================================================
+   RESPONSIVE MODAL & POPUP REFINEMENTS (TABLET & MOBILE)
+   Prevents all popups and panels from appearing oversized or messy
+   ========================================================================== */
+
+@media (max-width: 1023px) {
+  /* 1. Modal Backdrops & Overlays */
+  .fixed.inset-0.z-50:not(#floating-chat-launcher),
+  .fixed.inset-0.z-60 {
+    padding: 0.5rem !important;
+  }
+
+  /* 2. Main Dialog Containers */
+  .fixed.inset-0.z-50 > div:not(.backdrop-blur-xs):not(.backdrop-blur-sm):not(.pointer-events-none):not([class*="fixed"]),
+  .fixed.inset-0.z-60 > div:not(.backdrop-blur-xs):not(.backdrop-blur-sm):not(.pointer-events-none):not([class*="fixed"]) {
+    max-height: 92vh !important;
+    border-radius: 1rem !important;
+    width: 100% !important;
+  }
+
+  /* 3. Modal Header Bars - Compact & Balanced */
+  .fixed.inset-0.z-50 [class*="from-hajj-"],
+  .fixed.inset-0.z-50 [class*="bg-hajj-"],
+  .fixed.inset-0.z-50 [class*="from-slate-900"],
+  .fixed.inset-0.z-60 [class*="from-hajj-"],
+  .fixed.inset-0.z-60 [class*="bg-hajj-"] {
+    padding-top: 0.625rem !important;
+    padding-bottom: 0.625rem !important;
+    padding-left: 0.875rem !important;
+    padding-right: 0.875rem !important;
+  }
+
+  .fixed.inset-0.z-50 h3,
+  .fixed.inset-0.z-60 h3 {
+    font-size: 0.875rem !important; /* 14px */
+    line-height: 1.25rem !important;
+  }
+
+  .fixed.inset-0.z-50 h4,
+  .fixed.inset-0.z-60 h4 {
+    font-size: 0.8125rem !important; /* 13px */
+    line-height: 1.15rem !important;
+  }
+
+  /* 4. Modal Body & Forms - Neat Padding, No Oversized Gutters */
+  .fixed.inset-0.z-50 form,
+  .fixed.inset-0.z-50 .p-6,
+  .fixed.inset-0.z-60 form,
+  .fixed.inset-0.z-60 .p-6 {
+    padding: 0.875rem !important;
+  }
+
+  /* 5. Form Inputs, Selects & Textareas inside Modals */
+  .fixed.inset-0.z-50 input:not([type="checkbox"]):not([type="radio"]):not([type="color"]):not([type="range"]),
+  .fixed.inset-0.z-50 select,
+  .fixed.inset-0.z-50 textarea,
+  .fixed.inset-0.z-60 input:not([type="checkbox"]):not([type="radio"]):not([type="color"]):not([type="range"]),
+  .fixed.inset-0.z-60 select,
+  .fixed.inset-0.z-60 textarea {
+    padding-top: 0.4rem !important;
+    padding-bottom: 0.4rem !important;
+    padding-left: 0.625rem !important;
+    padding-right: 0.625rem !important;
+    font-size: 0.75rem !important; /* 12px */
+    line-height: 1.15rem !important;
+    min-height: 34px !important;
+    border-radius: 0.5rem !important;
+  }
+
+  .fixed.inset-0.z-50 label,
+  .fixed.inset-0.z-60 label {
+    font-size: 0.6875rem !important; /* 11px */
+    font-weight: 700 !important;
+    margin-bottom: 0.2rem !important;
+  }
+
+  /* 6. Action Buttons inside Modals */
+  .fixed.inset-0.z-50 button[type="submit"],
+  .fixed.inset-0.z-60 button[type="submit"] {
+    padding-top: 0.5rem !important;
+    padding-bottom: 0.5rem !important;
+    padding-left: 0.875rem !important;
+    padding-right: 0.875rem !important;
+    font-size: 0.75rem !important;
+    border-radius: 0.5rem !important;
+  }
+
+  /* 7. Nested Cards & Summary Ribbons inside Modals */
+  .fixed.inset-0.z-50 .rounded-xl,
+  .fixed.inset-0.z-60 .rounded-xl {
+    padding: 0.625rem !important;
+  }
+}
+
+@media (max-width: 639px) {
+  /* On Mobile (< 640px) - Ultra-tight padding */
+  .fixed.inset-0.z-50:not(#floating-chat-launcher),
+  .fixed.inset-0.z-60 {
+    padding: 0.25rem !important;
+  }
+
+  .fixed.inset-0.z-50 > div:not(.backdrop-blur-xs):not(.backdrop-blur-sm):not(.pointer-events-none):not([class*="fixed"]),
+  .fixed.inset-0.z-60 > div:not(.backdrop-blur-xs):not(.backdrop-blur-sm):not(.pointer-events-none):not([class*="fixed"]) {
+    max-height: 96vh !important;
+    border-radius: 0.875rem !important;
+  }
+
+  .fixed.inset-0.z-50 form,
+  .fixed.inset-0.z-50 .p-6,
+  .fixed.inset-0.z-60 form,
+  .fixed.inset-0.z-60 .p-6 {
+    padding: 0.625rem !important;
+  }
+
+  .fixed.inset-0.z-50 [class*="from-hajj-"],
+  .fixed.inset-0.z-50 [class*="bg-hajj-"],
+  .fixed.inset-0.z-50 [class*="from-slate-900"],
+  .fixed.inset-0.z-60 [class*="from-hajj-"],
+  .fixed.inset-0.z-60 [class*="bg-hajj-"] {
+    padding-top: 0.5rem !important;
+    padding-bottom: 0.5rem !important;
+    padding-left: 0.75rem !important;
+    padding-right: 0.75rem !important;
+  }
+}
+
+
+
