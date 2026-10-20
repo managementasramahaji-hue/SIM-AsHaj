@@ -52,7 +52,7 @@ export function SpreadsheetIntegrationView() {
     pullFromCentralDatabase
   } = useAppContext();
 
-  const defaultWebAppUrl = 'https://script.google.com/macros/s/AKfycby9Tok8-zgcVsTuXfQBDA0prmRSpUs9kxpeyczsw9SRVjwZBEk6Y8st3tBv7LK7j_X6/exec';
+  const defaultWebAppUrl = '';
   const defaultSheetDocUrl = 'https://docs.google.com/spreadsheets/d/15loY6F6CMmIJ5qZaafidY6AB0vvrEpsSsE_B0XXBqP4/edit?gid=0#gid=0';
 
   const [scriptUrl, setScriptUrl] = useState(() => {

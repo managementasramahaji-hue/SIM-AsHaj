@@ -16,7 +16,7 @@ export function getGoogleSheetWebAppUrl(): string {
       return custom.trim();
     }
   }
-  return 'https://script.google.com/macros/s/AKfycby9Tok8-zgcVsTuXfQBDA0prmRSpUs9kxpeyczsw9SRVjwZBEk6Y8st3tBv7LK7j_X6/exec';
+  return '';
 }
 
 /**

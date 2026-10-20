@@ -2,8 +2,7 @@
 // State is kept in the server_store table (server-only access).
 import { createFileRoute } from "@tanstack/react-router";
 
-const DEFAULT_SHEET_URL =
-  "https://script.google.com/macros/s/AKfycby9Tok8-zgcVsTuXfQBDA0prmRSpUs9kxpeyczsw9SRVjwZBEk6Y8st3tBv7LK7j_X6/exec";
+
 
 type RT = { presences: Record<string, any>; workSessions: any[]; chatChannels: any[]; chatMessages: any[] };
 
@@ -122,16 +121,6 @@ async function handleEvent(body: any) {
   return json({ ok: true });
 }
 
-async function proxySheet(url: string, init?: RequestInit) {
-  const res = await fetch(url, { redirect: "follow", ...init });
-  const text = await res.text();
-  if (!res.ok) throw new Error(`HTTP ${res.status} dari Google Spreadsheet`);
-  try {
-    return JSON.parse(text);
-  } catch {
-    throw new Error("Respons Google Spreadsheet bukan JSON");
-  }
-}
 
 function stream() {
   const enc = new TextEncoder();
