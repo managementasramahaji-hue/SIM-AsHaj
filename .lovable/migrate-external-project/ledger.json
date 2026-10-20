@@ -1,9 +1,51 @@
 [
-{"capability":"code","source":"React SPA + Express server","outcome":"port","status":"migrated","next_action":"verify all screens"},
-{"capability":"schema","source":"external database (supabase_schema.sql, 17 tables)","outcome":"migrate","status":"pending","next_action":"recreate in Lovable Cloud"},
-{"capability":"records","source":"external database / Google Sheets","outcome":"migrate","status":"pending","next_action":"request CSV exports"},
-{"capability":"auth","source":"custom users table with plaintext passwords","outcome":"migrate","status":"pending","next_action":"replace with Lovable auth + first-login password setup"},
-{"capability":"google_sheets","source":"Apps Script web app + /api/sheets proxy","outcome":"preserve","status":"pending","next_action":"port proxy to server routes"},
-{"capability":"realtime_chat_api","source":"Express /api/realtime, /api/chat (file storage)","outcome":"migrate","status":"pending","next_action":"move to Cloud tables + realtime"},
-{"capability":"verification","source":"-","outcome":"verify","status":"pending","next_action":"end-to-end check after Cloud move"}
+ {
+  "capability": "code",
+  "source": "React SPA + Express server",
+  "outcome": "port",
+  "status": "migrated",
+  "next_action": "verify all screens"
+ },
+ {
+  "capability": "schema",
+  "source": "external database (supabase_schema.sql, 17 tables)",
+  "outcome": "migrate",
+  "status": "pending",
+  "next_action": "recreate in Lovable Cloud"
+ },
+ {
+  "capability": "records",
+  "source": "external database / Google Sheets",
+  "outcome": "migrate",
+  "status": "pending",
+  "next_action": "request CSV exports"
+ },
+ {
+  "capability": "auth",
+  "source": "custom users table with plaintext passwords",
+  "outcome": "migrate",
+  "status": "pending",
+  "next_action": "replace with Lovable auth + first-login password setup"
+ },
+ {
+  "capability": "google_sheets",
+  "source": "Apps Script web app + /api/sheets proxy",
+  "outcome": "preserve",
+  "status": "blocked",
+  "next_action": "owner must redeploy Apps Script with access: Anyone"
+ },
+ {
+  "capability": "realtime_chat_api",
+  "source": "Express /api/realtime, /api/chat (file storage)",
+  "outcome": "migrate",
+  "status": "migrated",
+  "next_action": "verify with two users"
+ },
+ {
+  "capability": "verification",
+  "source": "-",
+  "outcome": "verify",
+  "status": "pending",
+  "next_action": "end-to-end check after Cloud move"
+ }
 ]
