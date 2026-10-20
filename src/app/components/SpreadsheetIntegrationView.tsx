@@ -1,4 +1,5 @@
 // @ts-nocheck
+import { SyncErrorAssistant } from './SyncErrorAssistant';
 import React, { useState, useEffect, useMemo } from 'react';
 import { useAppContext } from '../store';
 import { ActionConfirmModal } from './CatalogManagementModals';
