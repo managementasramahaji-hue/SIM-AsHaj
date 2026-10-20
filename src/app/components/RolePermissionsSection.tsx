@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React, { useState, useMemo, useEffect } from 'react';
 import { User, UserRole, UserPermissions } from '../types';
 import { AppSettings } from '../services/dataStorage';

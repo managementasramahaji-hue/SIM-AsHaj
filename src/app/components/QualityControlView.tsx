@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { useState, useEffect, useMemo } from 'react';
 import { useAppContext, isQcRole } from '../store';
 import { Room, MeetingRoom, Building } from '../types';

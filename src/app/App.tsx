@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React from 'react';
 import { AppProvider, useAppContext } from './store';
 import { Login } from './components/Login';

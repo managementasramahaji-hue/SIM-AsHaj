@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
 import { formatRupiah, isMeetingFacility } from '../../lib/utils';

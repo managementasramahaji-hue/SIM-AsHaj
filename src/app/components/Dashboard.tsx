@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React, { useState, useMemo } from 'react';
 import { useAppContext, isKeuanganRole, isSuperAdmin, isRecepRole, isTeknisiRole, isQcRole, isKoperasiRole } from '../store';
 import { motion } from 'motion/react';

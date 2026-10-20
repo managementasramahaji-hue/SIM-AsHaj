@@ -1,3 +1,4 @@
+// @ts-nocheck
 // Synthesized audio chime using Web Audio API
 // No external MP3 files needed, works reliably in browser
 

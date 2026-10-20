@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React from 'react';
 import { useAppContext, isSuperAdmin, isRecepRole } from '../store';
 import { Transaction, Room } from '../types';

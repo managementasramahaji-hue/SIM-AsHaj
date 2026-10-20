@@ -8,3 +8,4 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+- Legacy app code lives in src/app with @ts-nocheck; it was ported verbatim from the source project and is rendered client-only from src/routes/index.tsx. Why: large browser-only SPA, preserved as-is during migration.

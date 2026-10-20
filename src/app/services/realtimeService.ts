@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { ChatChannel, ChatMessage, WorkSession } from '../types';
 
 export interface OnlinePresenceInfo {

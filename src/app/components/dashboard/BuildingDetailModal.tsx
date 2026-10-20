@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React, { useState, useMemo } from 'react';
 import { BuildingStat } from './BuildingOccupancySection';
 import { Room, Transaction, Maintenance, MeetingRoom } from '../../types';

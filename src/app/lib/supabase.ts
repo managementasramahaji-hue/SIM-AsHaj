@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { createClient } from '@supabase/supabase-js';
 import type { CompleteStorageDatabase } from '../services/dataStorage';
 import { initialRoomCapacityRates, initialUsers, initialBreakfastMenuItems } from '../data';

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import ExcelJS from 'exceljs';
 import { ReportExportParams, generateReportData } from './reportExporter';
 import { formatIndonesianDate, getRealTodayDate } from './utils';

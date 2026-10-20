@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React, { useState } from 'react';
 import { useAppContext } from '../store';
 import { EmailNotificationItem } from '../types';

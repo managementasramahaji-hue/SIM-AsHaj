@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { ChatChannel, ChatMessage, ChatScope } from '../types';
 import { initialChatChannels } from '../chatData';
 import { dataStorage } from './dataStorage';

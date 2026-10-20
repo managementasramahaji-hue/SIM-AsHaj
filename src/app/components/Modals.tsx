@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React, { useState, useEffect } from 'react';
 import { useAppContext, isTeknisiRole, isQcRole, isSuperAdmin, isRecepRole, isKoperasiRole, isManagerTeknisi, isManagerQc } from '../store';
 import { Transaction } from '../types';

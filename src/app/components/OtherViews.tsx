@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React, { useState, useMemo, useEffect } from 'react';
 import { useAppContext, formatHMS, isTeknisiRole, isManagerTeknisi, isManagerQc, isKoperasiRole, isRecepRole, isQcRole, isSuperAdmin, isKeuanganRole } from '../store';
 import { formatIndonesianDate, addDaysToDateStr, getRealTodayDate, formatIndonesianDateTime, parseLocalTimeString, isMeetingFacility, compareBuildingOrder, formatRupiah } from '../lib/utils';

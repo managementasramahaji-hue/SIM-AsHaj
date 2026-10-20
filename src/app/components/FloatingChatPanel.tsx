@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React, { useState, useRef, useEffect, useMemo } from 'react';
 import { useAppContext, isManagerRole, isSuperAdmin } from '../store';
 import { User, ChatChannel, ChatMessage } from '../types';

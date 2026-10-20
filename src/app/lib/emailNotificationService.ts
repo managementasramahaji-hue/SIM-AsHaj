@@ -1,3 +1,4 @@
+// @ts-nocheck
 // Email Notification Service for Maintenance System
 // LodgingPro / UPT Asrama Haji Management System
 

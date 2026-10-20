@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { Transaction, Room, RoomCapacityRate, MeetingRoom, BreakfastMenuItem } from '../types';
 import { findRoomRate, initialRoomCapacityRates } from '../data';
 import { dataStorage } from '../services/dataStorage';

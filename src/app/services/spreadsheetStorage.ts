@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { dataStorage, type CompleteStorageDatabase } from './dataStorage';
 import type { Building, Room, MeetingRoom, Transaction, Maintenance, QcInspection, User, ChatChannel, ChatMessage, WorkSession } from '../types';
 import { OFFICIAL_APP_LOGO } from '../officialLogo';

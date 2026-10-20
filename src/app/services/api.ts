@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { normalizeSpreadsheetPayload } from './spreadsheetStorage';
 import type { CompleteStorageDatabase } from './dataStorage';
 

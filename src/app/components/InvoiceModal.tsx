@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React, { useState, useEffect, useMemo, useRef } from 'react';
 import { Transaction, Room, ConsolidatedGroupRecord } from '../types';
 import { formatIndonesianDate, addDaysToDateStr, getRealTodayDate, formatRupiah, isMeetingFacility } from '../lib/utils';

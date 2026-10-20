@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { useState, useRef, useEffect } from 'react';
 import { useAppContext, isSuperAdmin, isKeuanganRole } from '../store';
 import { OperationalNotifications, OperationalSummaryRibbon } from './OperationalNotifications';

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React, { useState, useEffect, useMemo } from 'react';
 import { useAppContext, isSuperAdmin, isRecepRole } from '../store';
 import { Building, MeetingRoom, Room, RoomCapacityRate } from '../types';

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { Building2, LayoutDashboard, Users, Menu, X } from "lucide-react";
 import { useState } from "react";
 

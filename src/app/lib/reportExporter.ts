@@ -1,3 +1,4 @@
+// @ts-nocheck
 import XLSX from 'xlsx-js-style';
 import ExcelJS from 'exceljs';
 import { exportToExcelWithExcelJs, loadOfficialLogoImage } from './excelExporter';
