@@ -38,7 +38,7 @@ export async function createMirrorSpreadsheet(): Promise<{ id: string; url: stri
   const r = await call("/spreadsheets", {
     method: "POST",
     body: JSON.stringify({
-      properties: { title: "SIM Asrama Haji Jakarta - Database (salinan otomatis)", locale: "in_ID", timeZone: "Asia/Jakarta" },
+      properties: { title: "SIM Asrama Haji Jakarta - Database (salinan otomatis)", timeZone: "Asia/Jakarta" },
       sheets: MIRROR_TABS.map((t) => ({ properties: { title: t.tab, gridProperties: { frozenRowCount: 1 } } })),
     }),
   });
