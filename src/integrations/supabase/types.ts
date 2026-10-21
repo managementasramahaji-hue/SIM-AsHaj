@@ -14,6 +14,51 @@ export type Database = {
   }
   public: {
     Tables: {
+      account_migrations: {
+        Row: {
+          claimed_by: string | null
+          created_at: string
+          email: string
+          legacy_id: string
+          role: string
+        }
+        Insert: {
+          claimed_by?: string | null
+          created_at?: string
+          email: string
+          legacy_id: string
+          role: string
+        }
+        Update: {
+          claimed_by?: string | null
+          created_at?: string
+          email?: string
+          legacy_id?: string
+          role?: string
+        }
+        Relationships: []
+      }
+      profiles: {
+        Row: {
+          created_at: string
+          email: string
+          id: string
+          legacy_id: string
+        }
+        Insert: {
+          created_at?: string
+          email: string
+          id: string
+          legacy_id: string
+        }
+        Update: {
+          created_at?: string
+          email?: string
+          id?: string
+          legacy_id?: string
+        }
+        Relationships: []
+      }
       server_store: {
         Row: {
           key: string
@@ -32,12 +77,30 @@ export type Database = {
         }
         Relationships: []
       }
+      user_roles: {
+        Row: {
+          id: string
+          role: string
+          user_id: string
+        }
+        Insert: {
+          id?: string
+          role: string
+          user_id: string
+        }
+        Update: {
+          id?: string
+          role?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      has_role: { Args: { _role: string; _user_id: string }; Returns: boolean }
     }
     Enums: {
       [_ in never]: never
