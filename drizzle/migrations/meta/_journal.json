@@ -8,6 +8,13 @@
       "when": 1792505839331,
       "tag": "0000_server_store",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1792545572465,
+      "tag": "0001_managed_account_cutover",
+      "breakpoints": true
     }
   ]
 }
